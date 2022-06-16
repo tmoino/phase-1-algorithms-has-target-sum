@@ -1,5 +1,20 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  let seenNumbers = {};
+
+  //iterating through the array
+  for (const number of array) {
+
+    //for the current identify a complement that adds to the target  complement = target - number
+    let complement = target - number;
+
+    //checking if their is a complement is our array
+    if (complement in seenNumbers) 
+    return true;
+    seenNumbers[number] = true;
+  }
+
+  return false;
 }
 
 /* 
